@@ -1,0 +1,28 @@
+<section>
+    <h4> Hello {{userName}}! Welcome On To My Angular SPA! </h4>
+
+    <div>
+        <img 
+            [src]="imgs[imgIndex]" 
+            (click)="change()" 
+            [style.width.px]="imgWidth"
+            [class.rounded]="applyRounded"
+            [class.centered]="applyCentered"
+            />
+    </div>
+
+    <form>
+        <div>
+            <label>User Name:</label>
+            <input type="text" name="unm" [(ngModel)]="userName" />
+        </div>
+        <div>
+            <label>Image Width:</label>
+            <input type="range" name="iw" [(ngModel)]="imgWidth" min="50" max="1000" /> {{imgWidth}} px.
+        </div>
+        <div>
+            <label> <input type="checkbox" name="cb1" [(ngModel)]="applyCentered" /> Align Center </label>
+            <label> <input type="checkbox" name="cb2" [(ngModel)]="applyRounded" /> Apply Border </label>            
+        </div>
+    </form>
+</section>

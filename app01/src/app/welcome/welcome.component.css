@@ -1,0 +1,9 @@
+.rounded{
+    border:1px solid black;
+    border-radius: 50px;
+}
+
+.centered{
+    display: block;
+    margin: auto;
+}

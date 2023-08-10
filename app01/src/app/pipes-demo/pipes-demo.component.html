@@ -1,0 +1,51 @@
+<section class="pipesDemoBox">
+    <h4>String Related Pipes</h4>
+    <div>
+        <div>{{strData}}</div>
+        <div>{{strData|uppercase}}</div>
+        <div>{{strData|lowercase}}</div>
+        <div>{{strData|titlecase}}</div>
+    </div>
+
+    <h4>Number Pipe</h4>
+    <div>
+        <div>{{numData}}</div>
+        <div>{{numData|number:'10.10-10'}}</div>
+        <div>{{numData|number:'10.2-10'}}</div>
+        <div>{{numData|number:'5.2-2'}}</div>
+    </div>
+
+    <h4>Currency Pipe</h4>
+    <div>
+        <div>{{numData}}</div>
+        <div>{{numData|currency:'INR'}}</div>
+        <div>{{numData|currency:'USD'}}</div>
+        <div>{{numData|currency:'AUSD'}}</div>
+        <div>{{numData|currency:'JPY'}}</div>
+        <div>{{numData|currency:'GBP'}}</div>
+        <div>{{numData|currency:'ABC'}}</div>
+    </div>
+
+    <h4>Date Pipe</h4>
+    <div>
+        <div>{{dateData}}</div>
+        <div>{{dateData|date:'short'}}</div>
+        <div>{{dateData|date:'long'}}</div>
+        <div>{{dateData|date:'dd'}}</div>
+        <div>{{dateData|date:'dd-MM'}}</div>
+        <div>{{dateData|date:'dd-MMM'}}</div>
+        <div>{{dateData|date:'dd-MMMM'}}</div>
+        <div>{{dateData|date:'dd-MM-yy'}}</div>
+        <div>{{dateData|date:'dd-MMM-yyyy'}}</div>
+        <div>{{dateData|date:'dd-MMM-yyyy hh:mm:ss aa'}}</div>
+        <div>{{dateData|date:'dd-MMM-yyyy HH:mm:ss'}}</div>
+    </div>
+
+    <h4>Custome Pipe</h4>
+    <div>
+        <div>{{numData}}</div>
+        <div>{{numData|intoWords}}</div>
+        <div>{{4890|intoWords}}</div>
+        <div>{{9015|intoWords}}</div>
+    </div>
+</section>

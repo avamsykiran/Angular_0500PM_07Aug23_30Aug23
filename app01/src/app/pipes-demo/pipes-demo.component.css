@@ -1,0 +1,4 @@
+.pipesDemoBox>div{
+    columns: 2;
+    border-bottom: .5px dotted black;
+}
