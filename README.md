@@ -280,4 +280,65 @@ Angular 16
                 }
             }
 
+    Integrating Bootstrap
+
+        npm i bootstrap --save
+
+        node_modules/bootstrap/dist/css/bootstrap.min.css
+        node_modules/bootstrap/dist/js/bootstrap.min.js
+
+        angular.json
+            |- styles       include the .css
+            |- scripts      include the .js
+
+    
+    Angular Directives
+
+        Component Directives / Components
+            are the angular based html-elements.
+
+        Attribute Directive
+            are the angular based html-attributes.
+
+            structural 
+
+                *ngIf
+                *ngFor
+                *ngSwitch
+
+            in-built
+
+                ngModel, click,dblclick,blur,focus,chagne,ngSubmit, ....etc.,
+
+            custome
+
+                @Directive({
+                    selector:"[highlight]"
+                })
+                export class HighLighterDirective {}
+
+    Angular Services
+
+        a service is sued to offer bussiness logic like computations or rest-api communication ...etc.,
+
+        the angular depends on a injector system to inject the services across the application where ever they are asked for.
+
+        top-level-module (ROOT MODULE)
+                    app.module                      root-injector
+                        |
+                        |-app.component             app component injector
+                        |-login.component           login component injector
+                        |-sales.module              sales module injector
+                            |-dashboar.component
+                            |-shoppingCart.component        and so on.........
+                        |-inventory-module
+                            |-stock.component
+
+        eevery component, directive, module or pipe have 'providers:[]' in their meta-data.
+        if a servikce is mentioned in that array, the service object is then created at that injector level.
+
+                @Injectable({
+                    providedIn:'root'
+                })
+                export class EmployeeService {}
 

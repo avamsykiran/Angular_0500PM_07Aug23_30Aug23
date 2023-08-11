@@ -1,0 +1,20 @@
+<section class="card card-primary m-2 p-4">
+    <h4>Friends</h4>
+
+    <form (ngSubmit)="add()">
+        <div>
+            <label>Friend Name
+                <input type="text" name="fTxtBox" [(ngModel)]="friend" />
+            </label>
+            <button class="btn btn-sm btn-primary">ADD</button>
+        </div>
+    </form>
+
+    <p *ngIf="friends.length===0" class="alert alert-info p-2">
+        <strong>No friends yet.</strong>
+    </p>
+
+    <ol *ngIf="friends.length>0">
+        <li *ngFor="let fnm of friends">{{fnm}} <a (click)="remove(fnm)">(remove)</a> </li>
+    </ol>
+</section>
