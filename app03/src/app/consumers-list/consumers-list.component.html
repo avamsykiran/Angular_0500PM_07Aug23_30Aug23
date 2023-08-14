@@ -1,0 +1,29 @@
+<section class="m-4 col-sm-9 mx-auto p-4">
+    <h4>Consumers List</h4>
+
+    <div class="row fw-bold border-bottom border-danger text-center p-2">
+        <div class="col-2">Consumer#</div>
+        <div class="col">Consumer Name</div>
+        <div class="col-2">Mobile</div>
+        <div class="col">Mail</div>
+        <div class="col-2"></div>
+    </div>
+    
+    <p class="alert alert-info fw-bold p-4" *ngIf="!consumers || consumers.length===0">
+        No records to display
+    </p>
+
+    <div *ngIf="consumers && consumers.length>0">
+        <div class="row border-bottom border-primary p-2" *ngFor="let c of consumers">
+            <div class="col-2 text-right">{{c.id}}</div>
+            <div class="col">{{c.name}}</div>
+            <div class="col-2">{{c.mobile}}</div>
+            <div class="col">{{c.mailId}}</div>
+            <div class="col-2">
+                <button class="btn btn-sm btn-info mr-2" type="button">EDIT</button>
+                <button class="btn btn-sm btn-danger" type="button">DELETE</button>
+            </div>
+        </div>
+    </div>
+    
+</section>

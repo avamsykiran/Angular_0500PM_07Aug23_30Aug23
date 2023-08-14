@@ -342,3 +342,32 @@ Angular 16
                 })
                 export class EmployeeService {}
 
+    Angular Routing
+
+        RouterModule        from '@angular/router'
+
+            Route           {
+                                path:'',
+                                component:'',
+                                redirect:'',
+                                pathMatch:'startsWith|full',
+                                children:[],
+                                canActive:[],
+                                canDeactive:[],
+                                canLoad:[],
+                                canChildActive:[]
+                            }
+
+            Routes          Route[]
+
+            router-outlet   is a component. it is used reserve space in the top-level component for the active component
+                            as per the current url to appear.
+
+            routerLink      is a attribute directive to be used instead of 'href' on a '<a></a>' elements.
+
+            routeLinkActive is also a attribute directive for <a></a>, this takes a css-class and applies that class
+                            on the <a></a> whenever it is active (this is the current path)
+
+            Router          is a service that offers navigate and navigateByUrl methods to nagivate programatically.
+
+            ActivatedRouter is a service that provides access to the data appended on the router like url-params or path-0params..
