@@ -20,8 +20,8 @@
             <div class="col-2">{{c.mobile}}</div>
             <div class="col">{{c.mailId}}</div>
             <div class="col-2">
-                <button class="btn btn-sm btn-info mr-2" type="button">EDIT</button>
-                <button class="btn btn-sm btn-danger" type="button">DELETE</button>
+                <a class="btn btn-sm btn-info mr-2" [routerLink]="['/edit',c.id]">EDIT</a>
+                <button class="btn btn-sm btn-danger" type="button" (click)="remove(c.id)">DELETE</button>
             </div>
         </div>
     </div>

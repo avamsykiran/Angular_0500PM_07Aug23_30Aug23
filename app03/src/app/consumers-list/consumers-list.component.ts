@@ -9,9 +9,16 @@ import { Consumer } from '../models/consumer';
 })
 export class ConsumersListComponent {
 
-  consumers:Consumer[];
+  consumers: Consumer[];
 
-  constructor(consumerService:ConsumerService){
-    this.consumers=consumerService.getAll();
+  constructor(private consumerService: ConsumerService) {
+    this.consumers = consumerService.getAll();
+  }
+
+  remove(id: number) {
+    if (window.confirm("Are you sure of deleting consumer#" + id + "?")) {
+      this.consumerService.deleteById(id);
+      this.consumers = this.consumerService.getAll();
+    }
   }
 }

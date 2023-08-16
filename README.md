@@ -371,3 +371,30 @@ Angular 16
             Router          is a service that offers navigate and navigateByUrl methods to nagivate programatically.
 
             ActivatedRouter is a service that provides access to the data appended on the router like url-params or path-0params..
+
+    Angular Forms
+
+        Template Driven Forms
+
+            basically the form is designed in the template compeltly and is boudn to the fields
+            of the component class through two-way databinding via 'ngModel' from ForsmModule
+
+            this form supports html5 validation attributes. (but unfortunatly a few are not like min,max wont work).
+
+            these forms can not be sued to handle complicated senarios like nested forms ...etc.,
+
+            these formes are hard to test as 100% of it iswritten in html, they do not have any link in the typescript.
+
+        Model Driven Forms / Reactive Forms
+
+            these forms are modeled in the component class using FormControl,FormGroup and formBuilders
+            from ReactiveFormModule.
+
+            The modeled form is attached to a form skeleton in the template using
+            formControlName directive.
+
+            thes support all html5 validation attributes and custome validation attributes can also be dsigned.
+
+            these forms can be tested more easily when compared to thier counter-part.
+
+            these forms also support complicated senarios.
