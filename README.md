@@ -398,3 +398,14 @@ Angular 16
             these forms can be tested more easily when compared to thier counter-part.
 
             these forms also support complicated senarios.
+
+    Inter Component Data Sharing
+
+        @Input()
+        decorator is used to create an attribute field to a child-componenet, and via that
+        attribute the parent-component pass data to the child-component.
+
+        @Output()
+        decorator is used to expose a event attribute from a child-component to a parent-component.
+        we can create a EventEmitter Object in the child-component and handle the event when it occurs
+        in teh parent-component.

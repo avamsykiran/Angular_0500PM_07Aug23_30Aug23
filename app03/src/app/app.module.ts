@@ -6,12 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConsumersListComponent } from './consumers-list/consumers-list.component';
 import { ConsumerFormComponent } from './consumer-form/consumer-form.component';
+import { TxnsComponent } from './txns/txns.component';
+import { TxnsFormComponent } from './txns-form/txns-form.component';
+import { TxnDetailsComponent } from './txn-details/txn-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConsumersListComponent,
-    ConsumerFormComponent
+    ConsumerFormComponent,
+    TxnsComponent,
+    TxnsFormComponent,
+    TxnDetailsComponent
   ],
   imports: [
     BrowserModule,
