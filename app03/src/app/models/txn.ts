@@ -5,4 +5,5 @@ export interface Txn {
     amount:number;
     type:string;
     cid:number;
+    isEditing?:boolean;
 }

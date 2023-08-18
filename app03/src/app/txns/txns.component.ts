@@ -34,4 +34,24 @@ export class TxnsComponent implements OnInit {
       this.txns = this.txnsServcie.getAllByConsumerId(this.consumer!.id);
     }    
   }
+
+  add(txn:Txn){
+    txn.cid=this.consumer?.id??0;
+    this.txnsServcie.add(txn);
+    this.txns = this.txnsServcie.getAllByConsumerId(this.consumer!.id);
+  }
+
+  markEditable(id:number){
+    let index = this.txns.findIndex(t => t.id===id);
+    if(index>-1){
+      this.txns[index].isEditing=true;
+    }
+  }
+
+  update(txn:Txn){
+    txn.cid=this.consumer?.id??0;
+    txn.isEditing=undefined;
+    this.txnsServcie.update(txn);
+    this.txns = this.txnsServcie.getAllByConsumerId(this.consumer!.id);
+  }
 }

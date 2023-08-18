@@ -1,18 +1,20 @@
-<form class="row border-bottom border-primary p-2">
-    <div class="col-2">0</div>
+<form class="row border-bottom border-primary p-2" [formGroup]="txnForm" (ngSubmit)="formSubmit()">
     <div class="col-2">
-        <input type="date" name="tb1" class="form-control"/>
+        <input type="number" formControlName="id"  class="form-control" readonly/>
+    </div>
+    <div class="col-2">
+        <input type="date" formControlName="dot" class="form-control"/>
     </div>
     <div class="col">
-        <input type="text" name="tb2" class="form-control"/>
+        <input type="text" formControlName="header" class="form-control"/>
+    </div>
+    <div class="col-2" (click)="changeType('CREDIT')">
+        <input type="number" formControlName="amount" class="form-control" *ngIf="txnType==='CREDIT'"/>
+    </div>
+    <div class="col-2" (click)="changeType('DEBIT')">
+        <input type="number" formControlName="amount" class="form-control" *ngIf="txnType==='DEBIT'"/>
     </div>
     <div class="col-2">
-        <input type="number" name="tb3" class="form-control"/>
-    </div>
-    <div class="col-2">
-
-    </div>
-    <div class="col-2">
-        <button class="btn btn-sm btn-primary me-1">ADD</button>
+        <button class="btn btn-sm btn-primary me-1" [disabled]="txnForm.invalid">SAVE</button>
     </div>
 </form>
