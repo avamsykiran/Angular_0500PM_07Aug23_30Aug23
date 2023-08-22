@@ -1,0 +1,23 @@
+<div class="border border-primary p-4 m-2">
+    <form (ngSubmit)="start()" class="alert alert-info m-2">
+        <div>
+            <label>Lower Bound</label>
+            <input type="text" name="tb1" [(ngModel)]="lb" class="form-control" />
+        </div>
+        <div>
+            <label>Upper Bound</label>
+            <input type="text" name="tb2" [(ngModel)]="ub" class="form-control" />
+        </div>
+        <div class="d-grid">
+            <button class="mt-1" [disabled]="isInProgress" class="btn btn-secondary">START</button>
+        </div>
+    </form>
+
+    <p class="alert alert-danger fw-bold m-2 p-2" *ngIf="errMsg">
+       {{errMsg}} 
+    </p>
+
+    <div class="alert alert-primary fw-bold m-2 p-2" *ngIf="results && results.length>0">
+        <span *ngFor="let v of results">{{v}} </span> 
+    </div>
+</div>

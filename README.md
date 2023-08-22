@@ -409,3 +409,47 @@ Angular 16
         decorator is used to expose a event attribute from a child-component to a parent-component.
         we can create a EventEmitter Object in the child-component and handle the event when it occurs
         in teh parent-component.
+
+    RxJS
+
+        Reactive JavaScript
+
+        Promise
+
+            is a class that hosts an ansychronous job. The asynchronous job uses
+            two call backs resolve and reject to signal successful completion or errorsome abortion]
+            to the UI.
+
+
+            let p = new Promise( (resolve,reject) => {
+
+                    //call call resolve to indicate successful completion
+                    //will call reject if an error occurs and the job fails.
+
+            });
+
+            p.then( 
+                () => { /*this callback refereed by the resolve method */ },
+                () => { /*this callback refereed by the reject method */ }
+             )
+
+        Observable
+
+            is a enahcne alternate to Promise. The Observlabe is capble of not only
+            signal compeltion or error but also can continously emit valeus periodically from the
+            background nasynchronous operation.
+
+
+            let ob = new Observable( (observer) => {
+
+                //observer.next(val)    is used to emit values out of this job while the job is still in progress
+                //observer.complete()   is used to signal the completion of the job
+                //observer.error(err)   is used to signal the failure of the job
+
+            });
+
+            ob.subscribe({
+                next: val => {},
+                complete: () => {},
+                error: err => {}
+            });

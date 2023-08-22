@@ -11,9 +11,9 @@ export class TxnsService {
 
   constructor() {
     this.txns=[
-      {id:1,header:"Salary",type:"CREDIT",amount:69000,dot:new Date("2023-08-01"),cid:101},
-      {id:2,header:"Rent",type:"DEBIT",amount:9000,dot:new Date("2023-08-01"),cid:101},
-      {id:3,header:"Salary",type:"CREDIT",amount:69000,dot:new Date("2023-08-01"),cid:102}
+      {id:1,header:"Salary",type:"CREDIT",amount:69000,dot:"2023-08-01",cid:101},
+      {id:2,header:"Rent",type:"DEBIT",amount:9000,dot:"2023-08-01",cid:101},
+      {id:3,header:"Salary",type:"CREDIT",amount:69000,dot:"2023-08-01",cid:102}
     ];
     this.nextId=4;
   }

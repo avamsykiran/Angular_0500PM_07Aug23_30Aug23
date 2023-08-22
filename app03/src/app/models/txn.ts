@@ -1,6 +1,6 @@
 export interface Txn {
     id:number;
-    dot:Date;
+    dot:string;
     header:string;
     amount:number;
     type:string;
