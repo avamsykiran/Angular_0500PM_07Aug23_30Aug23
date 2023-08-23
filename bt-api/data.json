@@ -1,0 +1,48 @@
+{
+  "consumers": [
+    {
+      "id": 101,
+      "name": "Vamsy",
+      "mobile": "9052224753",
+      "mailId": "vamsy@gmail.com"
+    },
+    {
+      "id": 102,
+      "name": "Vinay",
+      "mobile": "9052224713",
+      "mailId": "vinay@gmail.com"
+    },
+    {
+      "name": "Vimal",
+      "mobile": "1234567890",
+      "mailId": "vimal@gmail.com",
+      "id": 103
+    }
+  ],
+  "txns": [
+    {
+      "id": 1,
+      "header": "Salary",
+      "type": "CREDIT",
+      "amount": 69000,
+      "dot": "2023-08-01",
+      "cid": 101
+    },
+    {
+      "id": 2,
+      "header": "Rent",
+      "type": "DEBIT",
+      "amount": 9000,
+      "dot": "2023-08-01",
+      "cid": 101
+    },
+    {
+      "id": 3,
+      "header": "Salary",
+      "type": "CREDIT",
+      "amount": 69000,
+      "dot": "2023-08-01",
+      "cid": 102
+    }
+  ]
+}

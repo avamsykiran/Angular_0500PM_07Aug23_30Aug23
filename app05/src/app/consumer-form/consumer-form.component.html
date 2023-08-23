@@ -1,0 +1,42 @@
+<section class="m-4 col-sm-3 mx-auto p-4">
+    <h4>{{isEditing?"Edit":"New"}} Consumer Details</h4>
+
+    <p class="alert alert-danger fw-bold p-4" *ngIf="errMsg">
+        {{errMsg}}
+    </p>
+
+    <form (ngSubmit)="formSubmitted()" [formGroup]="consumerForm" *ngIf="!errMsg">
+        <div>
+            <label>Consumer Id</label>
+            <input type="number" formControlName="id" class="form-control" readonly />
+        </div>
+        <div>
+            <label>Consumer Name</label>
+            <input type="text" formControlName="name" class="form-control" />
+            <div class="alert alert-danger p-2" *ngIf="nameFC.invalid && (nameFC.touched || nameFC.dirty)">
+                <span *ngIf="nameFC.errors!['required']">Consumer Name is amandatory field</span>
+                <span *ngIf="nameFC.errors!['minlength']">Consumer Name must be atleast 5 chars in length</span>
+                <span *ngIf="nameFC.errors!['maxlength']">Consumer Name must be atmax 50 chars in length</span>
+            </div>
+        </div>
+        <div>
+            <label>Mobile Number</label>
+            <input type="text" formControlName="mobile" class="form-control" />
+            <div class="alert alert-danger p-2" *ngIf="mobileFC.invalid && (mobileFC.touched || mobileFC.dirty)">
+                <span *ngIf="mobileFC.errors!['required']">Mobile Number is amandatory field</span>
+                <span *ngIf="mobileFC.errors!['pattern']">Mobile number must be a 10 digit number not starting with zero.</span>
+            </div>
+        </div>
+        <div>
+            <label>Email Id</label>
+            <input type="email" formControlName="mailId" class="form-control" />
+            <div class="alert alert-danger p-2" *ngIf="mailIdFC.invalid && (mailIdFC.touched || mailIdFC.dirty)">
+                <span *ngIf="mailIdFC.errors!['required']">Mail Id is amandatory field</span>
+                <span *ngIf="mailIdFC.errors!['email']">Expecting a valid email id.</span>
+            </div>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary mt-2" [disabled]="consumerForm.invalid">SAVE</button>
+        </div>
+    </form>
+</section>

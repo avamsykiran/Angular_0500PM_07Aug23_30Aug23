@@ -453,3 +453,36 @@ Angular 16
                 complete: () => {},
                 error: err => {}
             });
+
+    json-server
+
+        is a fake rest-api generating tool.
+
+        used to learn rest-api communication from a UI/UX framework.
+
+        1. create a nodejs project
+            md project-name
+            cd project-name
+            npm init -y
+
+        2. install json-server
+            npm i json-server --save
+
+        3. create a .json file in the project root to hold hypothetical data. (say data.json)
+
+        4. config the start command of the package.json as
+                json-server --port 8787 --watch ./data.json
+
+    Angular HttpClient
+
+        @angular/common/http
+                        |- HttpClientModule
+                                |- HttpClient
+                                        |- get(url) : Observable
+                                        |- post(url,reqBody) : Observable
+                                        |- put(url,reqBody) : Observable
+                                        |- delete(url) : Observable
+
+
+    
+
