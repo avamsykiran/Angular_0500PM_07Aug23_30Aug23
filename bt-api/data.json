@@ -43,6 +43,14 @@
       "amount": 69000,
       "dot": "2023-08-01",
       "cid": 102
+    },
+    {
+      "id": 4,
+      "header": "Birthday Party",
+      "amount": 7600,
+      "dot": "2023-08-24",
+      "type": "DEBIT",
+      "cid": 102
     }
   ]
 }
