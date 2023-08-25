@@ -483,6 +483,61 @@ Angular 16
                                         |- put(url,reqBody) : Observable
                                         |- delete(url) : Observable
 
+    Angular Router Gaurds
 
+        CanActive
+
+            controls whether a route can work or not.
+
+        CanDeActive
+
+            controls wheather a component mapped to a specific path can be unloaded or not.
+
+        CanLoad
+
+            controls wtheather a lazy-loading module be laoded or not.
+
+        CanChildActive    
     
+            controls whether all the child-routes of a route can work or not.
 
+
+        ng g guard GuardName --skip-tests
+
+    Angular Modules
+
+        Root Module
+
+            top-level module of an angular application.
+
+        Domain Module / Feature Module
+
+            represents one specific feature of an application. ForExample in case of an e-commerce application, Sales, Inventory,
+            Reporting, Delivery ..et., are different features of the application. And for each one of them we can create a
+            module called Domain Module.
+
+        Service Module
+
+            If a moduel is created to hosue all services alone that can be injected across the
+            rest of the modules, we call it a service module. An application can have multiple service modules like
+            a service module to hosue all authentication, a service module to hous all reporting logic, or a 
+            service module to compute all commercial caliculations ...et.,
+
+        Routing Module
+
+            is amodule that hosues the routing configuaration of an application.
+
+        Routed Module
+
+            if a top-level component of a module is a target of any route, then that module is called
+            routed module.
+
+        Widget Module
+
+            is a module that hosues, components and directives that are not directly related to the application domain
+            but are re-usable across all other modules.  
+
+            For Example a navigationBar, a messageBox, a progressBar ...etc., are components that can
+            customly constructed and sued across all other modules of the application. And these
+            are called widgets and the moudle that hosues these is called widget-module.
+            
