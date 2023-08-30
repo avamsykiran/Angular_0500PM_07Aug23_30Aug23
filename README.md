@@ -541,3 +541,4 @@ Angular 16
             customly constructed and sued across all other modules of the application. And these
             are called widgets and the moudle that hosues these is called widget-module.
             
+        
