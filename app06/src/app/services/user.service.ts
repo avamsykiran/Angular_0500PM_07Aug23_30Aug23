@@ -8,11 +8,14 @@ import { Observable, map } from 'rxjs';
 })
 export class UserService {
 
-  private currentUser!: User;
+  private currentUser!: User|null;
   apiUrl: string;
 
   constructor(private httpClient: HttpClient) {
     this.apiUrl = "http://localhost:8787/users";
+    if(localStorage.getItem("user")){
+      this.currentUser = JSON.parse(localStorage.getItem("user")??"");
+    }
   }
 
   isloggedIn(): boolean {
@@ -31,6 +34,8 @@ export class UserService {
             let user = users && users[0];
             if (user && user.password == password) {
               this.currentUser = user;
+              this.currentUser.password="";
+              localStorage.setItem("user",JSON.stringify(this.currentUser));
             }
             return this.isloggedIn();
           }
@@ -39,6 +44,15 @@ export class UserService {
   }
 
   getRole():string {
-    return this.currentUser.role;
+    return this.currentUser!.role;
+  }
+
+  getUserName():string{
+    return this.currentUser!.userName;
+  }
+
+  logout(){
+    this.currentUser=null;
+    localStorage.clear();
   }
 }

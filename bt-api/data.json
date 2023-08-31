@@ -1,23 +1,25 @@
 {
-  "users":[],
+  "users":[
+    {
+      "id":1,
+      "userName":"admin",
+      "password":"admin",
+      "role":"ADMIN"
+    },
+    {
+      "id":2,
+      "userName":"vamsy",
+      "password":"vamsy",
+      "role":"CONSUMER"
+    }
+  ],
   "consumers": [
     {
-      "id": 101,
+      "id": 1,
       "name": "Vamsy",
       "mobile": "9052224753",
-      "mailId": "vamsy@gmail.com"
-    },
-    {
-      "id": 102,
-      "name": "Vinay",
-      "mobile": "9052224713",
-      "mailId": "vinay@gmail.com"
-    },
-    {
-      "name": "Vimal",
-      "mobile": "1234567890",
-      "mailId": "vimal@gmail.com",
-      "id": 103
+      "mailId": "vamsy@gmail.com",
+      "userId":2
     }
   ],
   "txns": [
@@ -27,7 +29,7 @@
       "type": "CREDIT",
       "amount": 69000,
       "dot": "2023-08-01",
-      "cid": 101
+      "cid": 1
     },
     {
       "id": 2,
@@ -35,23 +37,7 @@
       "type": "DEBIT",
       "amount": 9000,
       "dot": "2023-08-01",
-      "cid": 101
-    },
-    {
-      "id": 3,
-      "header": "Salary",
-      "type": "CREDIT",
-      "amount": 69000,
-      "dot": "2023-08-01",
-      "cid": 102
-    },
-    {
-      "id": 4,
-      "header": "Birthday Party",
-      "amount": 7600,
-      "dot": "2023-08-24",
-      "type": "DEBIT",
-      "cid": 102
+      "cid": 1
     }
   ]
 }
