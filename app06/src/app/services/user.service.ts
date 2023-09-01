@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +10,14 @@ export class UserService {
 
   private currentUser!: User|null;
   apiUrl: string;
+  userChanged:BehaviorSubject<User|null>;
 
   constructor(private httpClient: HttpClient) {
     this.apiUrl = "http://localhost:8787/users";
     if(localStorage.getItem("user")){
       this.currentUser = JSON.parse(localStorage.getItem("user")??"");
     }
+    this.userChanged = new BehaviorSubject<User|null>(this.currentUser);
   }
 
   isloggedIn(): boolean {
@@ -36,6 +38,7 @@ export class UserService {
               this.currentUser = user;
               this.currentUser.password="";
               localStorage.setItem("user",JSON.stringify(this.currentUser));
+              this.userChanged.next(this.currentUser);
             }
             return this.isloggedIn();
           }
@@ -54,5 +57,6 @@ export class UserService {
   logout(){
     this.currentUser=null;
     localStorage.clear();
+    this.userChanged.next(this.currentUser);
   }
 }
